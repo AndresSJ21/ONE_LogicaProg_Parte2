@@ -1,0 +1,55 @@
+<meta charset="utf-8">
+
+<h1>PROGRAMA INICIO DE SESION</h1>
+
+
+<script>
+
+	function saltarLinea(){
+		
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}
+
+	function imprimir(frase){
+
+		document.write(frase);
+		saltarLinea();
+
+	}
+
+
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+
+    var intento=1;
+    var intentosMaximos=3;
+
+    while (intento<=intentosMaximos){
+
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+        if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+            break;
+        } else {
+            alert("inicio de sesión inválido. Favor intente de nuevo");
+            alert("Ya tuvo su intento "+ intento + " de "+intentosMaximos);
+            intento++;
+        }
+
+    }
+
+    if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+
+        } else {
+            alert("Alcanzó el número máximo de intentos de acceso permitidos: "+intentosMaximos);
+            alert("Su usuario ha sido bloqueado, contacte al administrador para restablecerlo");
+        }
+
+	imprimir("Fin");
+
+</script>

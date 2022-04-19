@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+
+<h1>PROGRAMA JUEGO DE ADIVINACION</h1>
+
+
+<script>
+
+	function saltarLinea(){
+		
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}
+
+	function imprimir(frase){
+
+		document.write(frase);
+		saltarLinea();
+
+	}
+
+    function loteria (numero){
+        
+        return Math.round(Math.random()*numero);
+
+    }
+
+    var numero=parseInt(prompt("Ingrese el valor más alto que puede tomar el número a adivinar"));
+    var numeroPensado=loteria(numero);
+    var numeroLanzado=parseInt(prompt("Ingrese un número entre 0 y "+ numero));
+
+    if(numeroPensado==numeroLanzado){
+        imprimir("Usted acertó");
+    }else{
+
+        if(numeroLanzado>numeroPensado){
+            imprimir("Usted erró, el nro "+ numeroLanzado + " es mayor al sorteado");
+        } else {
+            imprimir("Usted erró, el nro "+ numeroLanzado + " es menor al sorteado");
+        }    
+    }
+ 
+</script>
